@@ -56,9 +56,9 @@ COMMENT = "Yay Ruby!!"
            basic_auth: { username: ENV["LOVEY_USERNAME"], password: ENV["LOVEY_PASSWORD"] },          
            body: {"body" => "Yay Ruby!!"}.to_json
           }
-          print "Commenting on #{gist.url}"
-          puts HTTParty.post("https://api.github.com/gists/#{gist.id}/comments", options)
-          raise "DONE"
+          puts "Loving on #{gist.url}"
+          HTTParty.post("https://api.github.com/gists/#{gist.id}/comments", options)
+          exit
       end
     end
 
