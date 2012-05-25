@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'loveybot'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.date        = '2012-05-25'
   s.summary     = "Loveybot loves Rubyists!"
   s.description = "Send some love to the last person making a Ruby Gist on Github!"
