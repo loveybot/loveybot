@@ -4,6 +4,7 @@ require 'hashie'
 
 COMMENT = "Yay Ruby!!"
 
+module Loveybot
   class Gist
     attr_accessor :id, :comment_count, :files, :url
     def initialize(gist)
@@ -63,3 +64,4 @@ COMMENT = "Yay Ruby!!"
       end
     end
   end
+end
