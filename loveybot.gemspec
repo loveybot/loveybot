@@ -8,7 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'mark@beforewego.net'
   s.files       = ["lib/loveybot.rb"]
   s.homepage    = 'https://github.com/loveybot/loveybot'
-  s.add_dependency 'hashie', '~> 1.2.0'
   s.add_dependency 'json', '~> 1.7.3'
   s.add_dependency 'httparty', '~> 0.8.3'
 end

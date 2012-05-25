@@ -1,5 +1,4 @@
 require 'httparty'
-require 'hashie'
 require 'json'
 COMMENT = "Yay Ruby!!"
 
