@@ -65,6 +65,7 @@ module Loveybot
           HTTParty.post("https://api.github.com/gists/#{gist.id}/comments", options)
           return "Loving on #{gist.url}"
       end
+      return "Sorry, no lonely gists found. Try again later!"
     end
   end
 end
