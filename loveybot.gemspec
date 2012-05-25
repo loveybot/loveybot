@@ -7,9 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Mark Tabler", "Elise Worthy"]
   s.email       = 'mark@beforewego.net'
   s.files       = ["lib/loveybot.rb"]
-  s.add_dependency('hashie')
-  s.add_dependency('json')
-  s.add_dependency('httparty')
-  s.homepage    =
-    'https://github.com/loveybot/loveybot'
+  s.homepage    = 'https://github.com/loveybot/loveybot'
+  s.add_dependency 'hashie', '~> 1.2.0'
+  s.add_dependency 'json', '~> 1.7.3'
+  s.add_dependency 'httparty', '~> 0.8.3'
 end
