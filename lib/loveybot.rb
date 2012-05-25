@@ -58,11 +58,7 @@ COMMENT = "Yay Ruby!!"
           }
           puts "Loving on #{gist.url}"
           HTTParty.post("https://api.github.com/gists/#{gist.id}/comments", options)
-          exit
+          return
       end
     end
-
   end
-
-  lb = Loveybot.new
-  lb.yay
