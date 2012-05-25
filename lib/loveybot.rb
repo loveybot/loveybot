@@ -2,9 +2,13 @@ require 'httparty'
 require 'json'
 require 'hashie'
 
-COMMENT = "Yay Ruby!!"
-
 module Loveybot
+
+  def self.yay
+    Loveybot.new.yay
+  end
+
+  COMMENT = "Yay Ruby!!"
   class Gist
     attr_accessor :id, :comment_count, :files, :url
     def initialize(gist)
@@ -58,9 +62,8 @@ module Loveybot
            basic_auth: { username: ENV["LOVEY_USERNAME"], password: ENV["LOVEY_PASSWORD"] },          
            body: {"body" => "Yay Ruby!!"}.to_json
           }
-          puts "Loving on #{gist.url}"
           HTTParty.post("https://api.github.com/gists/#{gist.id}/comments", options)
-          return
+          return "Loving on #{gist.url}"
       end
     end
   end
