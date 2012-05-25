@@ -1,5 +1,7 @@
 require 'httparty'
 require 'json'
+require 'hashie'
+
 COMMENT = "Yay Ruby!!"
 
   class Gist
