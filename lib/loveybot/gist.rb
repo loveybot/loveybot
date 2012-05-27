@@ -1,3 +1,4 @@
+module Loveybot
   class Gist
     attr_accessor :id, :comment_count, :files, :url
     def initialize(gist)
@@ -17,4 +18,4 @@
       end.any?
     end
   end
-
+end

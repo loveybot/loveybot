@@ -2,11 +2,10 @@ module Loveybot
   class Loveybot
     GIST_URL = "https://api.github.com/gists"
 
-    attr_accessor :gists, :raw_data
+    attr_accessor :gists
 
     def initialize
-      obtain_raw_data
-      @gists = collect_gists
+      parse_gists
     end
 
     def lonely_gists_by_language(language)
@@ -15,22 +14,23 @@ module Loveybot
       end
     end
 
-    def obtain_raw_data
-      @raw_data = JSON.parse(HTTParty.get(GIST_URL).body)
+    def raw_data
+      JSON.parse(HTTParty.get(GIST_URL).body)
     end
 
-    def collect_gists
-      @raw_data.collect do |hash|
+    def parse_gists
+      @gists = raw_data.collect do |hash|
         Gist.new(hash)
       end
     end
 
     def yay(language = "Ruby")
-      lonely_gists_by_language(language).each do |gist| 
+      if gist = lonely_gists_by_language(language).first
         post_comment_on(gist, language)
         return "Loving on #{gist.url}"
+      else
+        return "Sorry, no lonely #{language} gists found. Try again later!"
       end
-      return "Sorry, no lonely #{language} gists found. Try again later!"
     end
 
     def post_comment_on(gist, language)
